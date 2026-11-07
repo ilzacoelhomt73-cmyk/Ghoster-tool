@@ -86,7 +86,7 @@ def menu():
 
     escrever(f"[ 1 ] {VERDE}FERRAMENTAS PARA KAHOOT{RESET}\n")
 
-    escolha = input("\n[ + ] Escolha uma opção: ")
+    escolha = input(f"\n[ + ] {VERDE}Escolha uma opção{RESET} : ")
 
     if escolha == "1":
         clear()
@@ -96,7 +96,7 @@ def menu():
         escrever(f"[ 3 ] {VERDE}Pegar Respostas{RESET}\n", 0.01)
         escrever(f"[ 4 ] {VERDE}Adiconar Bots{RESET}\n", 0.01)
 
-        escolha_kahoot = input("\n[ + ] Escolha uma opção: ")
+        escolha_kahoot = input(f"\n[ + ]{VERDE}Escolha uma opção{RESET} : ")
 
         if escolha_kahoot == "1" and sistema == "termux":
             escrever("[ + ] Instalando Kitty-Tools Para Termux\n")
