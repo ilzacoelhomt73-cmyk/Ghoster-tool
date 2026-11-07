@@ -85,6 +85,7 @@ def menu():
     sistema = get_system()
 
     escrever(f"[ 1 ] {VERDE}FERRAMENTAS PARA KAHOOT{RESET}\n")
+    escrever(f"[ 2 ] {VERDE}FERRAMENTAS DDOS{RESET}\n")
 
     escolha = input(f"\n[ + ] {VERDE}Escolha uma opção{RESET} : ")
 
@@ -126,6 +127,31 @@ def menu():
 
         else:
             escrever("[ - ] opção invalida\n", 0.01)
+
+    
+    elif escolha == "2":
+        clear()
+        banner()
+        escrever(f"[ 1 ] {VERDE}DDoS Ripper{RESET}\n")
+        escrever(f"[ 2 ] {VERDE}Gamkers-DDos{RESET}\n")
+
+        
+        
+        escolha_ddos = input(f"\n[ + ]{VERDE} Escolha uma opção{RESET} : ")
+
+        if escolha_ddos == "1":
+            escrever("[ + ] Instalando DDos ripper\n")
+            subprocess.run(["git", "clone", "https://github.com/palahsu/DDoS-Ripper.git"])
+            
+            subprocess.run([sys.executable, "DRipper.py"], cwd="DDoS-Ripper", check=True)
+
+        elif escolha_ddos == "2":
+            escrever("[ + ] Instalando Gamkers-DDos\n")
+            subprocess.run(["git", "clone", "https://github.com/gamkers/GAMKERS-DDOS.git"])
+
+            subprocess.run(["python2", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
+
+
 
     else:
         escrever("[ - ] opção invalida\n", 0.01)
