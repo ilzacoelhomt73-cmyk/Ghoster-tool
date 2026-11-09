@@ -7,7 +7,7 @@ RESET = "\033[0m"
 
 PRETO = "\033[30m"
 VERMELHO = "\033[31m"
-VERDE = "\033[32m"
+VERDE_B = "\033[32m"
 AMARELO = "\033[33m"
 AZUL = "\033[34m"
 ROXO = "\033[35m"
@@ -16,7 +16,7 @@ BRANCO = "\033[37m"
 
 PRETO_B = "\033[90m"
 VERMELHO_B = "\033[91m"
-VERDE_B = "\033[92m"
+VERDE_B_B = "\033[92m"
 AMARELO_B = "\033[93m"
 AZUL_B = "\033[94m"
 ROXO_B = "\033[95m"
@@ -46,7 +46,7 @@ comando_kahoot_debian = (
 
 
 def banner():
-    print(VERDE + fr"""
+    print(VERDE_B + fr"""
 
    ________               __                ______            __
   / ____/ /_  ____  _____/ /____  _____    /_  __/___  ____  / /
@@ -84,20 +84,20 @@ def menu():
 
     sistema = get_system()
 
-    escrever(f"[ 1 ] {VERDE}FERRAMENTAS PARA KAHOOT{RESET}\n")
-    escrever(f"[ 2 ] {VERDE}FERRAMENTAS DDOS{RESET}\n")
+    escrever(f"[ 1 ] {VERDE_B}FERRAMENTAS PARA KAHOOT{RESET}\n")
+    escrever(f"[ 2 ] {VERDE_B}FERRAMENTAS DDOS{RESET}\n")
 
-    escolha = input(f"\n[ + ] {VERDE}Escolha uma opção{RESET} : ")
+    escolha = input(f"\n[ + ] {VERDE_B}Escolha uma opção{RESET} : ")
 
     if escolha == "1":
         clear()
         banner()
-        escrever(f"[ 1 ] {VERDE}Kitty Tools{RESET}\n", 0.01)
-        escrever(f"[ 2 ] {VERDE}Buscar Quizid{RESET}\n", 0.01)
-        escrever(f"[ 3 ] {VERDE}Pegar Respostas{RESET}\n", 0.01)
-        escrever(f"[ 4 ] {VERDE}Adiconar Bots{RESET}\n", 0.01)
+        escrever(f"[ 1 ] {VERDE_B}Kitty Tools{RESET}\n", 0.01)
+        escrever(f"[ 2 ] {VERDE_B}Buscar Quizid{RESET}\n", 0.01)
+        escrever(f"[ 3 ] {VERDE_B}Pegar Respostas{RESET}\n", 0.01)
+        escrever(f"[ 4 ] {VERDE_B}Adiconar Bots{RESET}\n", 0.01)
 
-        escolha_kahoot = input(f"\n[ + ]{VERDE} Escolha uma opção{RESET} : ")
+        escolha_kahoot = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
         if escolha_kahoot == "1" and sistema == "termux":
             escrever("[ + ] Instalando Kitty-Tools Para Termux\n")
@@ -132,12 +132,12 @@ def menu():
     elif escolha == "2":
         clear()
         banner()
-        escrever(f"[ 1 ] {VERDE}DDoS Ripper{RESET}\n")
-        escrever(f"[ 2 ] {VERDE}Gamkers-DDos{RESET}\n")
+        escrever(f"[ 1 ] {VERDE_B}DDoS Ripper{RESET}\n")
+        escrever(f"[ 2 ] {VERDE_B}Gamkers-DDos{RESET}\n")
 
         
         
-        escolha_ddos = input(f"\n[ + ]{VERDE} Escolha uma opção{RESET} : ")
+        escolha_ddos = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
         if escolha_ddos == "1":
             escrever("[ + ] Instalando DDos ripper\n")
@@ -149,7 +149,7 @@ def menu():
             escrever("[ + ] Instalando Gamkers-DDos\n")
             subprocess.run(["git", "clone", "https://github.com/gamkers/GAMKERS-DDOS.git"])
 
-            subprocess.run(["python2", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
+            subprocess.run(["python", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
 
 
 
