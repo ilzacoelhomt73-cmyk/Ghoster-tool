@@ -148,8 +148,12 @@ def menu():
         elif escolha_ddos == "2":
             escrever("[ + ] Instalando Gamkers-DDos\n")
             subprocess.run(["git", "clone", "https://github.com/gamkers/GAMKERS-DDOS.git"])
+            
+            if sistema == "termux":
+                subprocess.run(["python2", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
 
-            subprocess.run(["python", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
+            else:
+                subprocess.run(["python", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
 
 
 
