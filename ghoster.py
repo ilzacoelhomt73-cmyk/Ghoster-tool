@@ -63,7 +63,6 @@ comando_kahoot_debian = (
 
 def banner():
     print(VERDE_B + fr"""
-
    ________               __                ______            __
   / ____/ /_  ____  _____/ /____  _____    /_  __/___  ____  / /
  / / __/ __ \/ __ \/ ___/ __/ _ \/ ___/_____/ / / __ \/ __ \/ /
@@ -98,12 +97,8 @@ def get_system():
 sistema = get_system()
 
 def menu_termux():
-
-    
-
     escrever(f"[ 1 ] {VERDE_B}FERRAMENTAS PARA KAHOOT{RESET}\n")
     escrever(f"[ 2 ] {VERDE_B}FERRAMENTAS DDOS{RESET}\n")
-    
 
     escolha = input(f"\n[ + ] {VERDE_B}Escolha uma opção{RESET} : ")
 
@@ -184,7 +179,7 @@ def menu_debian():
 
     escrever(f"[ 1 ] {VERDE_B}FERRAMENTAS PARA KAHOOT{RESET}\n")
     escrever(f"[ 2 ] {VERDE_B}FERRAMENTAS DDOS{RESET}\n")
-    escrever(f"[ 2 ] {VERDE_B}Vs Code{RESET}\n")
+    escrever(f"[ 3 ] {VERDE_B}Vs Code{RESET}\n")
     
 
     escolha = input(f"\n[ + ] {VERDE_B}Escolha uma opção{RESET} : ")
