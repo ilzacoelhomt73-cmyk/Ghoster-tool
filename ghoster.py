@@ -23,7 +23,6 @@ ROXO_B = "\033[95m"
 CIANO_B = "\033[96m"
 BRANCO_B = "\033[97m"
 
-
 comando_vscode_debian = (
     "sudo apt update -y && "
     "sudo apt install gnome-keyring -y && "
@@ -49,7 +48,6 @@ comando_kahoot_termux = (
     "cd Kitty-Tools && "
     "python main.py"
 )
-
 
 comando_kahoot_debian = (
     "sudo apt update -y && "
@@ -84,17 +82,16 @@ def escrever(texto, limite=0.02):
 def clear():
     os.system("clear")
 
-# o script foi feito pra suportar apenas termux e debian
-
 
 def get_system():
     if "com.termux" in os.environ.get("PREFIX", ""):
         return "termux"
-
     else:
         return "debian"
 
+
 sistema = get_system()
+
 
 def menu_termux():
     escrever(f"[ 1 ] {VERDE_B}FERRAMENTAS PARA KAHOOT{RESET}\n")
@@ -109,6 +106,7 @@ def menu_termux():
         escrever(f"[ 2 ] {VERDE_B}Buscar Quizid{RESET}\n", 0.01)
         escrever(f"[ 3 ] {VERDE_B}Pegar Respostas{RESET}\n", 0.01)
         escrever(f"[ 4 ] {VERDE_B}Adiconar Bots{RESET}\n", 0.01)
+        escrever(f"[ 5 ] {VERDE_B}BotSpammer{RESET}\n", 0.01)
 
         escolha_kahoot = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
@@ -121,8 +119,7 @@ def menu_termux():
             subprocess.run(comando_kahoot_debian, shell=True)
 
         elif escolha_kahoot == "2":
-            subprocess.run(
-                [sys.executable, "scripts/buscar_uuid.py"])
+            subprocess.run([sys.executable, "scripts/buscar_uuid.py"])
 
         elif escolha_kahoot == "3":
             escrever("[ + ] Abrindo site de respostas\n")
@@ -136,51 +133,48 @@ def menu_termux():
             subprocess.run([
                 "xdg-open",
                 "https://quizflood.xyz/"
-            ]) 
+            ])
+
+        elif escolha_kahoot == "5":
+            escrever("[ + ] Executando BotSpammer\n")
+            subprocess.run([
+                "npm", "install"], cwd="./scripts/botspammer/")
+            subprocess.run([
+                "node", "app.js"], cwd="./scripts/botspammer/")
 
         else:
             escrever("[ - ] opção invalida\n", 0.01)
 
-    
     elif escolha == "2":
         clear()
         banner()
         escrever(f"[ 1 ] {VERDE_B}DDoS Ripper{RESET}\n")
         escrever(f"[ 2 ] {VERDE_B}Gamkers-DDos{RESET}\n")
 
-        
-        
         escolha_ddos = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
         if escolha_ddos == "1":
             escrever("[ + ] Instalando DDos ripper\n")
             subprocess.run(["git", "clone", "https://github.com/palahsu/DDoS-Ripper.git"])
-            
             subprocess.run([sys.executable, "DRipper.py"], cwd="DDoS-Ripper", check=True)
 
         elif escolha_ddos == "2":
             escrever("[ + ] Instalando Gamkers-DDos\n")
             subprocess.run(["git", "clone", "https://github.com/gamkers/GAMKERS-DDOS.git"])
-            
+
             if sistema == "termux":
                 subprocess.run(["python2", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
-
             else:
                 subprocess.run(["python", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
-
 
     else:
         escrever("[ - ] opção invalida\n", 0.01)
 
 
 def menu_debian():
-
-    
-
     escrever(f"[ 1 ] {VERDE_B}FERRAMENTAS PARA KAHOOT{RESET}\n")
     escrever(f"[ 2 ] {VERDE_B}FERRAMENTAS DDOS{RESET}\n")
     escrever(f"[ 3 ] {VERDE_B}Vs Code{RESET}\n")
-    
 
     escolha = input(f"\n[ + ] {VERDE_B}Escolha uma opção{RESET} : ")
 
@@ -191,6 +185,7 @@ def menu_debian():
         escrever(f"[ 2 ] {VERDE_B}Buscar Quizid{RESET}\n", 0.01)
         escrever(f"[ 3 ] {VERDE_B}Pegar Respostas{RESET}\n", 0.01)
         escrever(f"[ 4 ] {VERDE_B}Adiconar Bots{RESET}\n", 0.01)
+        escrever(f"[ 5 ] {VERDE_B}BotSpammer{RESET}\n", 0.01)
 
         escolha_kahoot = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
@@ -203,8 +198,7 @@ def menu_debian():
             subprocess.run(comando_kahoot_debian, shell=True)
 
         elif escolha_kahoot == "2":
-            subprocess.run(
-                [sys.executable, "scripts/buscar_uuid.py"])
+            subprocess.run([sys.executable, "scripts/buscar_uuid.py"])
 
         elif escolha_kahoot == "3":
             escrever("[ + ] Abrindo site de respostas\n")
@@ -218,39 +212,39 @@ def menu_debian():
             subprocess.run([
                 "xdg-open",
                 "https://quizflood.xyz/"
-            ]) 
+            ])
+
+        elif escolha_kahoot == "5":
+            escrever("[ + ] Executando BotSpammer\n")
+            subprocess.run([
+                "npm", "install"], cwd="./scripts/botspammer/")
+            subprocess.run([
+                "node", "app.js"], cwd="./scripts/botspammer/")
 
         else:
             escrever("[ - ] opção invalida\n", 0.01)
 
-    
     elif escolha == "2":
         clear()
         banner()
         escrever(f"[ 1 ] {VERDE_B}DDoS Ripper{RESET}\n")
         escrever(f"[ 2 ] {VERDE_B}Gamkers-DDos{RESET}\n")
 
-        
-        
         escolha_ddos = input(f"\n[ + ]{VERDE_B} Escolha uma opção{RESET} : ")
 
         if escolha_ddos == "1":
             escrever("[ + ] Instalando DDos ripper\n")
             subprocess.run(["git", "clone", "https://github.com/palahsu/DDoS-Ripper.git"])
-            
             subprocess.run([sys.executable, "DRipper.py"], cwd="DDoS-Ripper", check=True)
 
         elif escolha_ddos == "2":
             escrever("[ + ] Instalando Gamkers-DDos\n")
             subprocess.run(["git", "clone", "https://github.com/gamkers/GAMKERS-DDOS.git"])
-            
+
             if sistema == "termux":
                 subprocess.run(["python2", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
-
             else:
                 subprocess.run(["python", "GAMKERS-DDOS.py"], cwd="GAMKERS-DDOS", check=True)
-
-    
 
     elif escolha == "3":
         escrever("[ + ] Instalando Vs Code para Debian")
@@ -260,13 +254,10 @@ def menu_debian():
         escrever("[ - ] opção invalida\n", 0.01)
 
 
-
-
 if sistema == "termux":
     clear()
     banner()
     menu_termux()
-
 else:
     clear()
     banner()
